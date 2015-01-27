@@ -1,0 +1,861 @@
+2014-11-20 15:48:35 Error: [MissingControllerException] Controller class HEPHYDBController could not be found.
+Exception Attributes: array (
+  'class' => 'HEPHYDBController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/HEPHYDB/
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-20 15:49:18 Error: [MissingControllerException] Controller class HEPHYDBController could not be found.
+Exception Attributes: array (
+  'class' => 'HEPHYDBController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/HEPHYDB/
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-22 15:24:15 Error: [MissingControllerException] Controller class RUNDBController could not be found.
+Exception Attributes: array (
+  'class' => 'RUNDBController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/RUNDB
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-22 15:24:20 Error: [MissingControllerException] Controller class EEERUNDBController could not be found.
+Exception Attributes: array (
+  'class' => 'EEERUNDBController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/EEERUNDB
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-22 15:24:24 Error: [MissingControllerException] Controller class EEEDQMController could not be found.
+Exception Attributes: array (
+  'class' => 'EEEDQMController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/EEEDQM/
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-12-23 14:29:45 Error: [MissingTableException] Table runs for model Run was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'runs',
+  'class' => 'Run',
+  'ds' => 'default',
+)
+Request URL: /CAKEPHP/EEE_RUNDB/
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Model.php(3566): Model->setSource('runs')
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Datasource\DboSource.php(2490): Model->schema()
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Datasource\DboSource.php(1715): DboSource->fields(Object(AppModel), 'Run', '')
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Datasource\DboSource.php(1093): DboSource->generateAssociationQuery(Object(RunTable), Object(AppModel), 'belongsTo', 'Run', Array, Array, false)
+#5 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Model.php(2947): DboSource->read(Object(RunTable), Array)
+#6 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#7 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Component\PaginatorComponent.php(196): Model->find('all', Array)
+#8 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\Controller\RunTablesController.php(25): PaginatorComponent->paginate()
+#9 [internal function]: RunTablesController->index()
+#10 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(RunTablesController), Array)
+#11 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunTablesController), Object(CakeRequest))
+#13 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2014-12-23 14:30:31 Error: [MissingTableException] Table runs for model Run was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'runs',
+  'class' => 'Run',
+  'ds' => 'default',
+)
+Request URL: /CAKEPHP/EEE_RUNDB/runTables
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Model.php(3566): Model->setSource('runs')
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Datasource\DboSource.php(2490): Model->schema()
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Datasource\DboSource.php(1715): DboSource->fields(Object(AppModel), 'Run', '')
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Datasource\DboSource.php(1093): DboSource->generateAssociationQuery(Object(RunTable), Object(AppModel), 'belongsTo', 'Run', Array, Array, false)
+#5 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Model.php(2947): DboSource->read(Object(RunTable), Array)
+#6 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#7 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Component\PaginatorComponent.php(196): Model->find('all', Array)
+#8 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\Controller\RunTablesController.php(25): PaginatorComponent->paginate()
+#9 [internal function]: RunTablesController->index()
+#10 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(RunTablesController), Array)
+#11 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunTablesController), Object(CakeRequest))
+#13 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2014-12-23 14:31:05 Error: [MissingTableException] Table runs for model Run was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'runs',
+  'class' => 'Run',
+  'ds' => 'default',
+)
+Request URL: /CAKEPHP/EEE_RUNDB/runTables
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Model.php(3566): Model->setSource('runs')
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Model.php(1369): Model->getDataSource()
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Datasource\DboSource.php(2490): Model->schema()
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Datasource\DboSource.php(1715): DboSource->fields(Object(AppModel), 'Run', '')
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Datasource\DboSource.php(1093): DboSource->generateAssociationQuery(Object(RunTable), Object(AppModel), 'belongsTo', 'Run', Array, Array, false)
+#5 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Model.php(2947): DboSource->read(Object(RunTable), Array)
+#6 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#7 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Component\PaginatorComponent.php(196): Model->find('all', Array)
+#8 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\Controller\RunTablesController.php(25): PaginatorComponent->paginate()
+#9 [internal function]: RunTablesController->index()
+#10 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(RunTablesController), Array)
+#11 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunTablesController), Object(CakeRequest))
+#13 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2014-12-23 14:34:47 Error: [MissingTableException] Table run_table for model RunTable was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'run_table',
+  'class' => 'RunTable',
+  'ds' => 'default',
+)
+Request URL: /CAKEPHP/EEE_RUNDB/runTables
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Model.php(3566): Model->setSource('run_table')
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Model.php(2947): Model->getDataSource()
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Component\PaginatorComponent.php(196): Model->find('all', Array)
+#4 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\Controller\RunTablesController.php(25): PaginatorComponent->paginate()
+#5 [internal function]: RunTablesController->index()
+#6 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(RunTablesController), Array)
+#7 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#8 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunTablesController), Object(CakeRequest))
+#9 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2015-01-16 10:42:33 Error: [MissingActionException] Action Runs::search() could not be found.
+Exception Attributes: array (
+  'controller' => 'Runs',
+  'action' => 'search',
+)
+Request URL: /CAKEPHP/EEE_RUNDB/runs/search
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Scaffold.php(150): Scaffold->_scaffold(Object(CakeRequest))
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(535): Scaffold->__construct(Object(RunsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(494): Controller->_getScaffold(Object(CakeRequest))
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunsController), Object(CakeRequest))
+#5 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2015-01-16 10:56:05 Error: [MissingActionException] Action Runs::search() could not be found.
+Exception Attributes: array (
+  'controller' => 'Runs',
+  'action' => 'search',
+)
+Request URL: /CAKEPHP/EEE_RUNDB/runs/search
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Scaffold.php(150): Scaffold->_scaffold(Object(CakeRequest))
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(535): Scaffold->__construct(Object(RunsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(494): Controller->_getScaffold(Object(CakeRequest))
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunsController), Object(CakeRequest))
+#5 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2015-01-16 13:37:05 Error: [MissingHelperException] Helper class MyHelper could not be found.
+Exception Attributes: array (
+  'class' => 'MyHelper',
+  'plugin' => false,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\HelperCollection.php(63): HelperCollection->load('My')
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(837): HelperCollection->__isset('My')
+#2 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\search_selector.ctp(258): View->__get('My')
+#3 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\index.ctp(3): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#6 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#8 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#9 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunsController), Object(CakeRequest))
+#10 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2015-01-16 13:43:18 Error: [MissingHelperException] Helper class MyHelper could not be found.
+Exception Attributes: array (
+  'class' => 'MyHelper',
+  'plugin' => false,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\HelperCollection.php(63): HelperCollection->load('My')
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(837): HelperCollection->__isset('My')
+#2 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\search.ctp(258): View->__get('My')
+#3 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\index.ctp(5): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#6 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#8 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#9 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunsController), Object(CakeRequest))
+#10 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2015-01-16 13:44:12 Error: [MissingHelperException] Helper class MyHelper could not be found.
+Exception Attributes: array (
+  'class' => 'MyHelper',
+  'plugin' => false,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\HelperCollection.php(63): HelperCollection->load('My')
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(837): HelperCollection->__isset('My')
+#2 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\search.ctp(258): View->__get('My')
+#3 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\index.ctp(5): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#6 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#8 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#9 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunsController), Object(CakeRequest))
+#10 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2015-01-16 13:47:25 Error: [MissingHelperException] Helper class MyHelper could not be found.
+Exception Attributes: array (
+  'class' => 'MyHelper',
+  'plugin' => false,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\HelperCollection.php(63): HelperCollection->load('My')
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(837): HelperCollection->__isset('My')
+#2 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\search.ctp(245): View->__get('My')
+#3 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\index.ctp(5): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#6 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#8 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#9 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunsController), Object(CakeRequest))
+#10 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2015-01-16 13:54:09 Error: [MissingHelperException] Helper class MyHelper could not be found.
+Exception Attributes: array (
+  'class' => 'MyHelper',
+  'plugin' => false,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\HelperCollection.php(63): HelperCollection->load('My')
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(837): HelperCollection->__isset('My')
+#2 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\search.ctp(245): View->__get('My')
+#3 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\index.ctp(5): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#6 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#8 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#9 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunsController), Object(CakeRequest))
+#10 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2015-01-16 13:55:04 Error: [MissingHelperException] Helper class MyHelper could not be found.
+Exception Attributes: array (
+  'class' => 'MyHelper',
+  'plugin' => false,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\HelperCollection.php(63): HelperCollection->load('My')
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(837): HelperCollection->__isset('My')
+#2 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\search.ctp(245): View->__get('My')
+#3 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\index.ctp(5): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#6 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#8 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#9 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunsController), Object(CakeRequest))
+#10 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2015-01-16 13:59:45 Error: [MissingHelperException] Helper class MyHelper could not be found.
+Exception Attributes: array (
+  'class' => 'MyHelper',
+  'plugin' => false,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\HelperCollection.php(63): HelperCollection->load('My')
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(837): HelperCollection->__isset('My')
+#2 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\search.ctp(245): View->__get('My')
+#3 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\index.ctp(9): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#6 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#8 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#9 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunsController), Object(CakeRequest))
+#10 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2015-01-16 14:01:29 Error: [MissingHelperException] Helper class MyHelper could not be found.
+Exception Attributes: array (
+  'class' => 'MyHelper',
+  'plugin' => false,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\HelperCollection.php(63): HelperCollection->load('My')
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(837): HelperCollection->__isset('My')
+#2 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\search.ctp(245): View->__get('My')
+#3 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\index.ctp(29): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#6 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#8 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#9 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunsController), Object(CakeRequest))
+#10 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2015-01-17 22:54:51 Error: [MissingActionException] Action Runs::search() could not be found.
+Exception Attributes: array (
+  'controller' => 'Runs',
+  'action' => 'search',
+)
+Request URL: /CAKEPHP/EEE_RUNDB/runs/search
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Scaffold.php(150): Scaffold->_scaffold(Object(CakeRequest))
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(535): Scaffold->__construct(Object(RunsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(494): Controller->_getScaffold(Object(CakeRequest))
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunsController), Object(CakeRequest))
+#5 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2015-01-18 05:24:05 Error: Fatal Error (4): syntax error, unexpected ''month'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\Model\Run.php, line 27]
+2015-01-18 05:24:05 Error: [FatalErrorException] syntax error, unexpected ''month'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find?station_name=PISA-01&year=2010-2014
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 27)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 27, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 27, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-18 06:16:35 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 33]
+2015-01-18 06:16:35 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find?station_name=SAVO-01&month=11
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 33)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 33, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 33, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-18 07:03:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/js/jquery-1.6.4.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-18 07:29:40 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/img/datepicker_calendar_icon.gif
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-18 07:30:38 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/img/datepicker_calendar_icon.gif
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-19 06:59:01 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/img/datepicker_calendar_icon.gif
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-19 12:01:00 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/img/datepicker_calendar_icon.gif
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-19 12:10:01 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/img/datepicker_calendar_icon.gif
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-19 12:38:24 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/img/datepicker_calendar_icon.gif
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-19 12:39:00 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/img/datepicker_calendar_icon.gif
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-19 12:41:16 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/img/datepicker_calendar_icon.gif
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-19 12:44:44 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/img/datepicker_calendar_icon.gif
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-19 14:58:15 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 77]
+2015-01-19 14:58:15 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 77)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 77, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 77, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-19 15:03:29 Error: Fatal Error (4): syntax error, unexpected 'date' (T_STRING), expecting ',' or ';' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 66]
+2015-01-19 15:03:29 Error: [FatalErrorException] syntax error, unexpected 'date' (T_STRING), expecting ',' or ';'
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 66)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 66, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 66, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-19 15:03:53 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 86]
+2015-01-19 15:03:53 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';'
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 86)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 86, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 86, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-19 15:21:10 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 63]
+2015-01-19 15:21:10 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 63)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 63, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 63, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-19 15:21:44 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 74]
+2015-01-19 15:21:44 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 74)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 74, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 74, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-19 15:22:05 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 76]
+2015-01-19 15:22:05 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 76)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 76, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 76, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-19 15:22:41 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 69]
+2015-01-19 15:22:41 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 69)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 69, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 69, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-19 15:22:55 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 65]
+2015-01-19 15:22:55 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 65)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 65, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 65, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-19 15:23:22 Error: Fatal Error (4): syntax error, unexpected ')' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 74]
+2015-01-19 15:23:22 Error: [FatalErrorException] syntax error, unexpected ')'
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 74)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 74, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 74, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-19 15:29:19 Error: Fatal Error (4): syntax error, unexpected 'inclusive_date_start' (T_STRING), expecting ',' or ';' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 56]
+2015-01-19 15:29:19 Error: [FatalErrorException] syntax error, unexpected 'inclusive_date_start' (T_STRING), expecting ',' or ';'
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 56, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 56, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-19 15:29:39 Error: Fatal Error (4): syntax error, unexpected 'inclusive_date_start' (T_STRING), expecting ',' or ';' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 56]
+2015-01-19 15:29:39 Error: [FatalErrorException] syntax error, unexpected 'inclusive_date_start' (T_STRING), expecting ',' or ';'
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 56, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 56, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-19 15:29:41 Error: Fatal Error (4): syntax error, unexpected 'inclusive_date_start' (T_STRING), expecting ',' or ';' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 56]
+2015-01-19 15:29:41 Error: [FatalErrorException] syntax error, unexpected 'inclusive_date_start' (T_STRING), expecting ',' or ';'
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 56, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 56, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-19 16:08:22 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 73]
+2015-01-19 16:08:22 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 73)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 73, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 73, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-20 12:37:38 Error: Fatal Error (1): Call to a member function isAjax() on a non-object in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\Controller\RunsController.php, line 119]
+2015-01-20 12:37:38 Error: [FatalErrorException] Call to a member function isAjax() on a non-object
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find/sort:run_id/direction:desc?station_name=ALTA-01&date_from=2014-12-01&date_to=2014-12-02&creationDateBetween=2014-12-01+-+2014-12-02
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 119)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 119, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 119, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-20 12:38:01 Error: Fatal Error (1): Call to a member function isAjax() on a non-object in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\Controller\RunsController.php, line 118]
+2015-01-20 12:38:01 Error: [FatalErrorException] Call to a member function isAjax() on a non-object
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find/sort:run_id/direction:desc?station_name=ALTA-01&date_from=2014-12-01&date_to=2014-12-02&creationDateBetween=2014-12-01+-+2014-12-02
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 118)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 118, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 118, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-21 15:02:46 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\Controller\RunsController.php, line 165]
+2015-01-21 15:02:46 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find?station_name=GROS-01&date_from=2014-10-28&date_to=2014-11-07&creationDateBetween=2014-10-28+-+2014-11-07
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 165)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 165, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 165, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-21 15:03:37 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\Controller\RunsController.php, line 150]
+2015-01-21 15:03:37 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find?station_name=GROS-01&date_from=2014-10-28&date_to=2014-11-07&creationDateBetween=2014-10-28+-+2014-11-07
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 150)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 150, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 150, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-21 15:48:22 Error: [MissingActionException] Action Runs::[object Object]() could not be found.
+Exception Attributes: array (
+  'controller' => 'Runs',
+  'action' => '[object Object]',
+)
+Request URL: /CAKEPHP/EEE_RUNDB/runs/%5Bobject%20Object%5D
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Scaffold.php(150): Scaffold->_scaffold(Object(CakeRequest))
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(535): Scaffold->__construct(Object(RunsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(494): Controller->_getScaffold(Object(CakeRequest))
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunsController), Object(CakeRequest))
+#5 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2015-01-21 15:48:56 Error: [MissingActionException] Action Runs::[object Object]() could not be found.
+Exception Attributes: array (
+  'controller' => 'Runs',
+  'action' => '[object Object]',
+)
+Request URL: /CAKEPHP/EEE_RUNDB/runs/%5Bobject%20Object%5D
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Scaffold.php(150): Scaffold->_scaffold(Object(CakeRequest))
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(535): Scaffold->__construct(Object(RunsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(494): Controller->_getScaffold(Object(CakeRequest))
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunsController), Object(CakeRequest))
+#5 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2015-01-21 15:49:15 Error: [MissingActionException] Action Runs::[object Object]() could not be found.
+Exception Attributes: array (
+  'controller' => 'Runs',
+  'action' => '[object Object]',
+)
+Request URL: /CAKEPHP/EEE_RUNDB/runs/%5Bobject%20Object%5D
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Scaffold.php(150): Scaffold->_scaffold(Object(CakeRequest))
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(535): Scaffold->__construct(Object(RunsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(494): Controller->_getScaffold(Object(CakeRequest))
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunsController), Object(CakeRequest))
+#5 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2015-01-21 15:49:19 Error: [MissingActionException] Action Runs::[object Object]() could not be found.
+Exception Attributes: array (
+  'controller' => 'Runs',
+  'action' => '[object Object]',
+)
+Request URL: /CAKEPHP/EEE_RUNDB/runs/%5Bobject%20Object%5D
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Scaffold.php(150): Scaffold->_scaffold(Object(CakeRequest))
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(535): Scaffold->__construct(Object(RunsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(494): Controller->_getScaffold(Object(CakeRequest))
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunsController), Object(CakeRequest))
+#5 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2015-01-21 23:46:46 Error: Fatal Error (4): syntax error, unexpected ',' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 22]
+2015-01-21 23:46:46 Error: [FatalErrorException] syntax error, unexpected ','
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find?station_name=GROS-01&date_from=2015-23-01&date_to=2015-01-08&creationDateBetween=2015-24-01+-+2015-01-08
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 22)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 22, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 22, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-22 11:24:53 Error: Fatal Error (4): syntax error, unexpected ')', expecting ',' or ';' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 15]
+2015-01-22 11:24:53 Error: [FatalErrorException] syntax error, unexpected ')', expecting ',' or ';'
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find?station_name=GROS-01&date_from=2014-10-29&date_to=2015-12-01&creationDateBetween=2014-11-29+-+2015-12-01
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 15)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 15, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 15, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-22 11:36:47 Error: [MissingHelperException] Helper class controllerHelper could not be found.
+Exception Attributes: array (
+  'class' => 'controllerHelper',
+  'plugin' => false,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find?station_name=GROS-01&date_from=&date_to=&creationDateBetween=
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\HelperCollection.php(63): HelperCollection->load('controller')
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(837): HelperCollection->__isset('controller')
+#2 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp(92): View->__get('controller')
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#7 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#8 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunsController), Object(CakeRequest))
+#9 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2015-01-22 11:39:44 Error: [MissingHelperException] Helper class queryHelper could not be found.
+Exception Attributes: array (
+  'class' => 'queryHelper',
+  'plugin' => false,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find?station_name=GROS-01&date_from=&date_to=&creationDateBetween=
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\HelperCollection.php(63): HelperCollection->load('query')
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(837): HelperCollection->__isset('query')
+#2 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp(92): View->__get('query')
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(948): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(910): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\CAKEPHP\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#7 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#8 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunsController), Object(CakeRequest))
+#9 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2015-01-22 11:40:14 Error: Fatal Error (4): syntax error, unexpected ')', expecting ']' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 92]
+2015-01-22 11:40:14 Error: [FatalErrorException] syntax error, unexpected ')', expecting ']'
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 92)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 92, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 92, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-22 11:46:19 Error: Fatal Error (4): syntax error, unexpected ',' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 17]
+2015-01-22 11:46:19 Error: [FatalErrorException] syntax error, unexpected ','
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find?station_name=GROS-01&date_from=&date_to=&creationDateBetween=
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 17)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 17, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 17, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-22 11:57:30 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\Controller\RunsController.php, line 163]
+2015-01-22 11:57:30 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find?station_name=GROS-01&date_from=2014-10-29&date_to=2014-11-07&creationDateBetween=2015-02-01+-+2015-01-08
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 163)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 163, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 163, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-22 12:20:51 Error: [MissingActionException] Action Runs::runs() could not be found.
+Exception Attributes: array (
+  'controller' => 'Runs',
+  'action' => 'runs',
+)
+Request URL: /CAKEPHP/EEE_RUNDB/runs/runs/find
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Scaffold.php(150): Scaffold->_scaffold(Object(CakeRequest))
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(535): Scaffold->__construct(Object(RunsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(494): Controller->_getScaffold(Object(CakeRequest))
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunsController), Object(CakeRequest))
+#5 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2015-01-22 12:20:55 Error: [MissingActionException] Action Runs::runs() could not be found.
+Exception Attributes: array (
+  'controller' => 'Runs',
+  'action' => 'runs',
+)
+Request URL: /CAKEPHP/EEE_RUNDB/runs/runs/find
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Scaffold.php(150): Scaffold->_scaffold(Object(CakeRequest))
+#1 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(535): Scaffold->__construct(Object(RunsController), Object(CakeRequest))
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Controller\Controller.php(494): Controller->_getScaffold(Object(CakeRequest))
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#4 C:\xampp\htdocs\CAKEPHP\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(RunsController), Object(CakeRequest))
+#5 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2015-01-22 12:30:49 Error: Fatal Error (4): syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ',' or ';' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 17]
+2015-01-22 12:30:49 Error: [FatalErrorException] syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ',' or ';'
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find?station_name=GROS-01&date_from=2014-10-01&date_to=2015-01-08&creationDateBetween=2014-12-01+-+2015-01-08
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 17)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 17, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 17, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-22 12:31:07 Error: Fatal Error (4): syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ',' or ';' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 17]
+2015-01-22 12:31:07 Error: [FatalErrorException] syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ',' or ';'
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find?station_name=GROS-01&date_from=2014-10-01&date_to=2015-01-08&creationDateBetween=2014-12-01+-+2015-01-08
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 17)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 17, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 17, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-22 12:41:00 Error: Fatal Error (4): syntax error, unexpected ')', expecting ',' or ';' in [C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\View\Runs\find.ctp, line 18]
+2015-01-22 12:41:00 Error: [FatalErrorException] syntax error, unexpected ')', expecting ',' or ';'
+Request URL: /CAKEPHP/EEE_RUNDB/runs/find?station_name=GROS-01&date_from=2014-10-01&date_to=2015-01-08&creationDateBetween=2014-12-01+-+2015-01-08
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 18)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 18, Array)
+#2 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 18, Array)
+#3 C:\xampp\htdocs\CAKEPHP\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-22 12:46:04 Error: [MissingControllerException] Controller class CAKEPHPController could not be found.
+Exception Attributes: array (
+  'class' => 'CAKEPHPController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/CAKEPHP/EEE_RUNDB/runs/find?station_name=GROS-01&creationDateBetween=2014-12-01+-+2015-01-08&_=1421927160128
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-22 12:46:56 Error: [MissingControllerException] Controller class CAKEPHPController could not be found.
+Exception Attributes: array (
+  'class' => 'CAKEPHPController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/CAKEPHP/EEE_RUNDB/runs/find?station_name=GROS-01&creationDateBetween=2014-12-01+-+2015-01-08&_=1421927200528
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-22 12:47:26 Error: [MissingControllerException] Controller class CAKEPHPController could not be found.
+Exception Attributes: array (
+  'class' => 'CAKEPHPController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/CAKEPHP/EEE_RUNDB/runs/find?station_name=GROS-01&_=1421927242318
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-22 12:47:47 Error: [MissingControllerException] Controller class CAKEPHPController could not be found.
+Exception Attributes: array (
+  'class' => 'CAKEPHPController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/CAKEPHP/EEE_RUNDB/runs/find?station_name=GROS-01&_=1421927242319
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-22 12:48:32 Error: [MissingControllerException] Controller class CAKEPHPController could not be found.
+Exception Attributes: array (
+  'class' => 'CAKEPHPController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/CAKEPHP/EEE_RUNDB/runs/find?_=1421927307004
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-22 12:48:57 Error: [MissingControllerException] Controller class CAKEPHPController could not be found.
+Exception Attributes: array (
+  'class' => 'CAKEPHPController',
+  'plugin' => NULL,
+)
+Request URL: /CAKEPHP/EEE_RUNDB/CAKEPHP/EEE_RUNDB/runs/find?_=1421927330702
+Stack Trace:
+#0 C:\xampp\htdocs\CAKEPHP\EEE_RUNDB\webroot\index.php(99): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
