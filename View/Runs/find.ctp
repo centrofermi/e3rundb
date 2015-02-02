@@ -110,11 +110,23 @@
 	});*/
 	
 </script>
+
+<?php
+	$this->Html->addCrumb('Search', '/runs/find');
+?>
 		
 <div class="runs form">
 
+<div class="btn-group">
+
+    <button id="csvButton">
+     Export Table Data
+	</button>
+	
+</div>
+
 	<div id="results">
-	<table cellpadding="0" cellspacing="0">
+	<table cellpadding="0" cellspacing="0" id="prova">
 	<thead>
 	<tr>
 			<th><?php echo $this->Paginator->sort('station_name_id'); ?></th>
@@ -191,12 +203,7 @@
 </div>
 
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li class='last'><?php echo $this->Html->link(__('Cancel'), array('action' => 'index')); ?></li>
-	</ul>
-
-	<h3><?php echo __('Advanced search'); ?></h3>
+	<h3><?php echo __('Search'); ?></h3>
 	<?php
 
 		echo $this->Form->create('Run', 
@@ -259,7 +266,7 @@
 		);
 		echo '</div>';
 		echo '</div>';
-				
+		echo '<div class="empty">&nbsp;</div>';
 		echo $this->Form->input('creationDateBetween', 
 			array(
 				'label' => false,
@@ -280,8 +287,11 @@
 
 	?>
 	
-	<div id="nruns"> </div>
-
+	<h3><?php echo __('Actions'); ?></h3>
+	<ul>
+		<li><?php echo $this->Html->link(__('Cancel'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('Download table as .csv'), array('action' => 'generateCsv')); ?></li>
+	</ul>
 
 </div>
 

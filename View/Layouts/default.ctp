@@ -18,8 +18,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
-		echo $this->Html->css('menu_assets/styles');
+		//echo $this->Html->css('cake.generic');
+		echo $this->Html->css('e3rundb');
 		
 		echo $this->Html->css('cupertino/jquery-ui-1.11.1.min.css');
 		
@@ -34,7 +34,14 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
+		   <h1>Extreme Energy Events Run Database</h1>
+			<?php
+				echo $this->Html->getCrumbs(' > ', array(
+					//'text' => $this->Html->image('home.png'),
+					'text' => 'Home',
+					'url' => array('plugin' => null,'controller' => 'runs', 'action' => 'index'),
+					'escape' => false));
+			?>
 		</div>
 		<div id="content">
 
