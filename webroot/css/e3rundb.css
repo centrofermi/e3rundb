@@ -219,10 +219,10 @@ th a:hover {
 	color: #fff;
 }
 th a.asc:after {
-	content: ' â£';
+	content: '\25B2';
 }
 th a.desc:after {
-	content: ' â¡';
+	content: ' \25BC';
 }
 table tr td {
 	height: 15px;

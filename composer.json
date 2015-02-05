@@ -1,0 +1,5 @@
+{
+    "require": {
+        "friendsofcake/cakephp-csvview": "1.3.0"
+    }
+}

@@ -28,13 +28,13 @@ class Run extends AppModel {
     );
 	
 	public function CreationDateRangeCondition($data = array()){
+		
 		if(strpos($data['creationDateBetween'], ' - ') !== false){
 			$tmp = explode(' - ', $data['creationDateBetween']);
-			//$tmp[0] = $tmp[0]."-01-01";
-			//$tmp[1] = $tmp[1]."-12-31";
+			if($tmp[0] == null) $tmp[0] = "2014-01-01";
+			if($tmp[1] == null) $tmp[1] = "2114-01-01";
 			return $tmp;
 		}else{
-			//return array($data['creationDateBetween']."-01-01", $data['creationDateBetween']."-12-31");
 			return array($data['creationDateBetween'], $data['creationDateBetween']);
 		}
 	}

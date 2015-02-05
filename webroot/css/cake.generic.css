@@ -26,7 +26,7 @@ body {
 	background: #003d4c;
 	color: #fff;
 	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
-	font-size:75%;
+	font-size:90%;
 	margin: 0;
 }
 a {
@@ -107,10 +107,12 @@ p {
 #footer {
 	clear: both;
 	padding: 6px 10px;
-	text-align: right;
 }
 #header a, #footer a {
 	color: #fff;
+}
+#cake-powered {
+	float: right;
 }
 
 /** containers **/
@@ -128,13 +130,10 @@ div.actions {
 	padding:10px 1.5%;
 }
 div.actions h3 {
-	padding-top:10px;
+	padding-top:0;
 	color:#777;
 }
 
-div.actions input{
-	font-size: 90%;
-}
 
 /** Tables **/
 table {
@@ -295,7 +294,6 @@ form div {
 	vertical-align: text-top;
 }
 form .input {
-	float: left;
 	color: #444;
 }
 form .required {
@@ -744,19 +742,3 @@ pre {
 #url-rewriting-warning {
 	display:none;
 }
-
-#date{
-	padding: 0;
-}
-#date .leftalign{
-	float: left;
-    width:40%;
-}
-#date .rightalign{
-	clear:none;
-    float: right;
-    width:40%;
-}
-#date label,#date input{
-	width: 90%;
-} 

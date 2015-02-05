@@ -12,12 +12,12 @@
 		
 		if($('#select_from_date').val() != '') from_date = $('#select_from_date').val();
 		else from_date = '2014-01-01';
-		if($('#select_to_date').val() != '') to_date = $('#select_from_date').val();
+		if($('#select_to_date').val() != '') to_date = $('#select_to_date').val();
 		else to_date = '2114-01-01';
 
 		queryurl += 'creationDateBetween=' + from_date + '+-+' + to_date;
 
-		//alert(queryurl);
+		alert(queryurl);
 		$.ajax({
 			url: queryurl,
 			cache: false,
@@ -113,17 +113,18 @@
 
 <?php
 	$this->Html->addCrumb('Search', '/runs/find');
+	
+	//Get url query parameters
+	$params = null;
+	$splitUrl = explode('?',$this->request->here());
+	if (array_key_exists(1, $splitUrl)) {
+		$params = $splitUrl[1];
+		//debug($params);
+	}
+
 ?>
 		
 <div class="runs form">
-
-<div class="btn-group">
-
-    <button id="csvButton">
-     Export Table Data
-	</button>
-	
-</div>
 
 	<div id="results">
 	<table cellpadding="0" cellspacing="0" id="prova">
@@ -205,7 +206,6 @@
 <div class="actions">
 	<h3><?php echo __('Search'); ?></h3>
 	<?php
-
 		echo $this->Form->create('Run', 
 			array(
 				'url' => array_merge(
@@ -290,7 +290,7 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('Cancel'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('Download table as .csv'), array('action' => 'generateCsv')); ?></li>
+		<li><?php echo $this->Html->link(__('Download table as .csv'), array('action' => 'export', '?' => $params)); ?></li>
 	</ul>
 
 </div>

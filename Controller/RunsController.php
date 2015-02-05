@@ -21,7 +21,8 @@ class RunsController extends AppController {
 	public $components = array( 
 								'RequestHandler',
 								'Paginator',
-								'Search.Prg'
+								'Search.Prg',
+								'CsvView.CsvView'
 							);
 							
 /**
@@ -149,6 +150,29 @@ class RunsController extends AppController {
 		    }
 		
 	    }
+	}
+
+/**
+ * export method
+ *
+cake * @return void
+ */	
+	public function export() {
+		
+		// start a standard search
+		$this->Prg->commonProcess();
+		// process the URL parameters
+		$params = $this->Prg->parsedParams();
+		// generate the Paginator conditions
+		$conditions = $this->Run->parseCriteria($params);
+		$runs = $this->Run->find('all', array('conditions' => $conditions, 'limit' => 10));
+		$_extract = $this->CsvView->prepareExtractFromFindResults($runs);
+		$_serialize = 'runs';
+		
+		$this->response->download('my_file.csv'); // <= setting the file name
+		$this->viewClass = 'CsvView.Csv';
+		$this->set(compact('runs', '_serialize','_extract'));
+
 	}
 
 /**
