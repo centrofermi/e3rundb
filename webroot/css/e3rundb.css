@@ -991,19 +991,20 @@ pre {
 	display:none;
 }
 
-#date{
-	padding: 0;
-}
-#date .leftalign{
+.leftalign{
 	float: left;
     width:45%;
 }
-#date .rightalign{
+.leftalign label, input{
+	padding-top: 0px;
+	width: 98%;
+} 
+.rightalign{
 	clear:none;
     float: right;
     width:45%;
 }
-#date label,#date input{
+.rightalign label, input{
 	padding-top: 0px;
 	width: 98%;
 } 

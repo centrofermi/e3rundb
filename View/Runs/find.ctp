@@ -8,16 +8,22 @@
 		var queryurl = absurl;
 		queryurl += '?';
 		queryurl += 'station_name=' + $('#station_name').val();
-		queryurl += '&';
 		
+		queryurl += '&';
 		if($('#select_from_date').val() != '') from_date = $('#select_from_date').val();
 		else from_date = '2014-01-01';
 		if($('#select_to_date').val() != '') to_date = $('#select_to_date').val();
 		else to_date = '2114-01-01';
-
 		queryurl += 'creationDateBetween=' + from_date + '+-+' + to_date;
 
-		alert(queryurl);
+		queryurl += '&';
+		if($('#select_from_runID').val() != '') from_runID = $('#select_from_runID').val();
+		else from_runID = '0';
+		if($('#select_to_runID').val() != '') to_runID = $('#select_to_runID').val();
+		else to_runID = '1000000';		
+		queryurl += 'runIDBetween=' + from_runID + '+-+' + to_runID;		
+		
+		//alert(queryurl);
 		$.ajax({
 			url: queryurl,
 			cache: false,
@@ -39,10 +45,12 @@
 
 		//Date from-to
 		var datestr = $('#RunCreationDateBetween').val();
-		var dates = datestr.split(" - ");
-		$('#select_from_date').val(dates[0]);
-		$('#select_to_date').val(dates[1]);
-
+		if(datestr){
+			var dates = datestr.split(" - ");
+			$('#select_from_date').val(dates[0]);
+			$('#select_to_date').val(dates[1]);
+		}
+		
 		$('#select_from_date').change(function() {
 					    
 			$('#RunCreationDateBetween').val(  $(this).val() + ' - ' +  $('#select_to_date').val() );
@@ -82,6 +90,31 @@
 			  
 			});
 		});
+
+		//RunID from-to
+		var runIDstr = $('#RunIDBetween').val();
+		if(runIDstr){
+			var runIDs = runIDstr.split(" - ");
+			$('#select_from_runID').val(runIDs[0]);
+			$('#select_to_runID').val(runIDs[1]);
+		}
+		
+		$('#select_from_runID').change(function() {
+					    
+			alert("cia");
+			$('#RunRunIDBetween').val(  $(this).val() + ' - ' +  $('#select_to_runID').val() );
+            updateSearch();
+			
+		});
+						
+		$('#select_to_runID').change(function() {
+		
+			$('#RunRunIDBetween').val(  $('#select_from_runID').val() + ' - ' +  $(this).val() );
+            updateSearch();
+
+		});
+
+
 		
     });
 	
@@ -225,8 +258,7 @@
 			)
 		);
 		
-		echo '<label>Run date</label>';
-		echo '<div id="date">';
+		echo '<label>Run Date</label>';
 		echo '<div class="leftalign">';
 		echo $this->Form->input('date_from',
 			array(
@@ -265,8 +297,7 @@
 			array('id' => 'datepicker_to')
 		);
 		echo '</div>';
-		echo '</div>';
-		echo '<div class="empty">&nbsp;</div>';
+		
 		echo $this->Form->input('creationDateBetween', 
 			array(
 				'label' => false,
@@ -274,7 +305,40 @@
 				'style' => 'display: none;'
 			)
 		);
-						
+		
+        echo '<label>Run ID</label>';
+		echo '<div class="leftalign">';
+		echo $this->Form->input('runID_from',
+			array(
+				'label' => 'From',
+				'type' => 'text', 
+                'error' => false , 
+				'id' => 'select_from_runID',
+				'div' => false,
+			)
+		);
+		echo '</div>';
+		echo '<div class="rightalign">';
+				echo $this->Form->input('runID_to',
+			array(
+				'label' => 'To',
+				'type' => 'text', 
+                'error' => false , 
+				'id' => 'select_to_runID',
+				'div' => false,
+			)
+		);
+		echo '</div>';
+
+		echo $this->Form->input('runIDBetween', 
+			array(
+				'label' => false,
+				'div' => false,
+				'style' => 'display: none;'
+			)
+		);
+		
+		echo '<div class="empty">&nbsp;</div>';		
 		echo $this->Form->submit('Search', 
 			array(
 				'onmousedown' => 'itsclicked = true; return true;',

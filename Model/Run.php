@@ -24,7 +24,13 @@ class Run extends AppModel {
             'type'      => 'expression',
             'method'    => 'CreationDateRangeCondition',
             'field'     => 'Run.run_date BETWEEN ? AND ?',
+        ),
+		'runIDBetween' => array(
+            'type'      => 'expression',
+            'method'    => 'RunIDRangeCondition',
+            'field'     => 'Run.run_id BETWEEN ? AND ?',
         )
+
     );
 	
 	public function CreationDateRangeCondition($data = array()){
@@ -36,6 +42,18 @@ class Run extends AppModel {
 			return $tmp;
 		}else{
 			return array($data['creationDateBetween'], $data['creationDateBetween']);
+		}
+	}
+
+	public function RunIDRangeCondition($data = array()){
+		
+		if(strpos($data['runIDBetween'], ' - ') !== false){
+			$tmp = explode(' - ', $data['runIDBetween']);
+			if($tmp[0] == null) $tmp[0] = "0";
+			if($tmp[1] == null) $tmp[1] = "1000000";
+			return $tmp;
+		}else{
+			return array($data['runIDBetween'], $data['runIDBetween']);
 		}
 	}
 	
