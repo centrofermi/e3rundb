@@ -54,8 +54,8 @@
 		<td><?php echo h($run['Run']['last_update']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $run['Run']['unique_run_id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $run['Run']['unique_run_id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $run['Run']['unique_run_id']), array(), __('Are you sure you want to delete # %s?', $run['Run']['unique_run_id'])); ?>
+			<?php //echo $this->Html->link(__('Edit'), array('action' => 'edit', $run['Run']['unique_run_id'])); ?>
+			<?php //echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $run['Run']['unique_run_id']), array(), __('Are you sure you want to delete # %s?', $run['Run']['unique_run_id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

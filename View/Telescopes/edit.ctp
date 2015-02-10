@@ -1,12 +1,13 @@
 <div class="runs form">
 <?php echo $this->Form->create('Run'); ?>
 	<fieldset>
-		<legend><?php echo __('Admin Add Run'); ?></legend>
+		<legend><?php echo __('Edit Run'); ?></legend>
 	<?php
 		echo $this->Form->input('station_name');
 		echo $this->Form->input('run_date');
 		echo $this->Form->input('run_id');
 		echo $this->Form->input('transfer_timestamp');
+		echo $this->Form->input('unique_run_id');
 		echo $this->Form->input('run_start');
 		echo $this->Form->input('run_stop');
 		echo $this->Form->input('run_tag');
@@ -30,6 +31,7 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 
+		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Run.unique_run_id')), array(), __('Are you sure you want to delete # %s?', $this->Form->value('Run.unique_run_id'))); ?></li>
 		<li><?php echo $this->Html->link(__('List Runs'), array('action' => 'index')); ?></li>
 	</ul>
 </div>
