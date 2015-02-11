@@ -13,6 +13,8 @@
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
 			<th><?php echo $this->Paginator->sort('description'); ?></th>
+			<th><?php echo $this->Paginator->sort('hardware_id','Hardware configuration'); ?></th>
+			<th><?php echo $this->Paginator->sort('software_id'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	</thead>
@@ -20,8 +22,10 @@
 	<?php foreach ($telescopes as $telescope): ?>
 	<tr>
 		<td><?php echo h($telescope['Telescope']['id']); ?>&nbsp;</td>
-		<td><?php echo h($telescope['Telescope']['name']); ?>&nbsp;</td>
+		<td><?php echo $this->Html->link(__($telescope['Telescope']['name']), array('action' => 'view', $telescope['Telescope']['id'])); ?>&nbsp;</td>
 		<td><?php echo h($telescope['Telescope']['description']); ?>&nbsp;</td>
+		<td><?php echo $this->Html->link(__($telescope['Telescope']['hardware_id']), array('controller' => 'hardwareConfiguration', 'action' => 'view', $telescope['Telescope']['hardware_id'])); ?>&nbsp;</td>
+		<td><?php echo $this->Html->link(__($telescope['Telescope']['software_id']), array('controller' => 'softwareConfiguration', 'action' => 'view', $telescope['Telescope']['software_id'])); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $telescope['Telescope']['id'])); ?>
 			<?php //echo $this->Html->link(__('Edit'), array('action' => 'edit', $telescope['Telescope']['id'])); ?>

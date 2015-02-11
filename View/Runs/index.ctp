@@ -6,15 +6,15 @@
 	<table cellpadding="0" cellspacing="0">
 	<thead>
 	<tr>
-			<th><?php echo $this->Paginator->sort('station_name_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('station_name_id','Telescope ID'); ?></th>
 			<th><?php echo $this->Paginator->sort('run_date'); ?></th>
-			<th><?php echo $this->Paginator->sort('run_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('run_id','Run ID'); ?></th>
 			<th><?php echo $this->Paginator->sort('transfer_timestamp'); ?></th>
-			<th><?php echo $this->Paginator->sort('unique_run_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('run_start'); ?></th>
-			<th><?php echo $this->Paginator->sort('run_stop'); ?></th>
-			<th><?php echo $this->Paginator->sort('run_tag'); ?></th>
-			<th><?php echo $this->Paginator->sort('run_comment'); ?></th>
+			<th><?php echo $this->Paginator->sort('unique_run_id','Unique Run ID'); ?></th>
+			<th><?php echo $this->Paginator->sort('run_start','Start Time'); ?></th>
+			<th><?php echo $this->Paginator->sort('run_stop','Stop Time'); ?></th>
+			<th><?php echo $this->Paginator->sort('run_tag','Tag'); ?></th>
+			<th><?php echo $this->Paginator->sort('run_comment','Comment'); ?></th>
 			<th><?php echo $this->Paginator->sort('num_events'); ?></th>
 			<th><?php echo $this->Paginator->sort('num_hit_events'); ?></th>
 			<th><?php echo $this->Paginator->sort('num_track_events'); ?></th>
@@ -33,6 +33,7 @@
 	<?php foreach ($runs as $run): ?>
 	<tr>
 		<td><?php echo h($run['Run']['station_name']); ?>&nbsp;</td>
+		<!-- <td><?php echo $this->Html->link(__($run['Run']['station_name']), array('controller' => 'telescopes', 'action' => 'view', $run['Run']['telescope_id'])); ?>&nbsp;</td> -->
 		<td><?php echo h($run['Run']['run_date']); ?>&nbsp;</td>
 		<td><?php echo h($run['Run']['run_id']); ?>&nbsp;</td>
 		<td><?php echo h($run['Run']['transfer_timestamp']); ?>&nbsp;</td>

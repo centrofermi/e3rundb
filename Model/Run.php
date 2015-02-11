@@ -57,4 +57,19 @@ class Run extends AppModel {
 		}
 	}
 	
+/**
+ * belongsTo associations
+ *
+ * @var array
+ */
+	public $belongsTo = array(
+		'Telescope' => array(
+			'className' => 'Telescope',
+			'foreignKey' => 'telescope_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+    );
+	
 }

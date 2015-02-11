@@ -92,7 +92,7 @@
 		});
 
 		//RunID from-to
-		var runIDstr = $('#RunIDBetween').val();
+		var runIDstr = $('#RunRunIDBetween').val();
 		if(runIDstr){
 			var runIDs = runIDstr.split(" - ");
 			$('#select_from_runID').val(runIDs[0]);
@@ -162,16 +162,17 @@
 	<div id="results">
 	<table cellpadding="0" cellspacing="0" id="prova">
 	<thead>
-	<tr>
-			<th><?php echo $this->Paginator->sort('station_name_id'); ?></th>
+		<tr>
+			<th><?php echo $this->Paginator->sort('station_name_id','Telescope ID'); ?></th>
+				<!-- <td><?php echo $this->Html->link(__($run['Run']['station_name']), array('controller' => 'telescopes', 'action' => 'view', $run['Run']['telescope_id'])); ?>&nbsp;</td> -->
 			<th><?php echo $this->Paginator->sort('run_date'); ?></th>
-			<th><?php echo $this->Paginator->sort('run_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('run_id','Run ID'); ?></th>
 			<th><?php echo $this->Paginator->sort('transfer_timestamp'); ?></th>
-			<th><?php echo $this->Paginator->sort('unique_run_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('run_start'); ?></th>
-			<th><?php echo $this->Paginator->sort('run_stop'); ?></th>
-			<th><?php echo $this->Paginator->sort('run_tag'); ?></th>
-			<th><?php echo $this->Paginator->sort('run_comment'); ?></th>
+			<th><?php echo $this->Paginator->sort('unique_run_id','Unique Run ID'); ?></th>
+			<th><?php echo $this->Paginator->sort('run_start','Start Time'); ?></th>
+			<th><?php echo $this->Paginator->sort('run_stop','Stop Time'); ?></th>
+			<th><?php echo $this->Paginator->sort('run_tag','Tag'); ?></th>
+			<th><?php echo $this->Paginator->sort('run_comment','Comment'); ?></th>
 			<th><?php echo $this->Paginator->sort('num_events'); ?></th>
 			<th><?php echo $this->Paginator->sort('num_hit_events'); ?></th>
 			<th><?php echo $this->Paginator->sort('num_track_events'); ?></th>
@@ -184,7 +185,7 @@
 			<th><?php echo $this->Paginator->sort('last_processing'); ?></th>
 			<th><?php echo $this->Paginator->sort('last_update'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
+		</tr>
 	</thead>
 	<tbody>
 	<?php foreach ($runs as $run): ?>
@@ -253,7 +254,7 @@
 		echo $this->Form->input('station_name', 
 			array(
 				'div' => false,
-				'label' => 'Station ID',
+				'label' => 'Telescope ID',
 				'id' => 'station_name'
 			)
 		);
