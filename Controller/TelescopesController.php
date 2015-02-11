@@ -3,6 +3,8 @@ App::uses('AppController', 'Controller');
 /**
  * Telescopes Controller
  *
+ * @property Telescope $Telescope
+ * @property PaginatorComponent $Paginator
  */
 class TelescopesController extends AppController {
 
@@ -38,10 +40,8 @@ class TelescopesController extends AppController {
  * @return void
  */
 	public function index() {
-
 		$this->Telescope->recursive = 0;
 		$this->set('telescopes', $this->Paginator->paginate());
-		
 	}
 
 /**
@@ -52,13 +52,20 @@ class TelescopesController extends AppController {
  * @return void
  */
 	public function view($id = null) {
-	
 		if (!$this->Telescope->exists($id)) {
-			throw new NotFoundException(__('Invalid run'));
+			throw new NotFoundException(__('Invalid telescope'));
 		}
+		$this->Telescope->unbindModel(
+			array('hasMany' => array('HardwareConfiguration', 'SoftwareConfiguration'))
+		);	
 		$options = array('conditions' => array('Telescope.' . $this->Telescope->primaryKey => $id));
-		$this->set('telescope', $this->Telescope->find('first', $options));
-	
+		$telescope = $this->Telescope->find('first', $options);
+		$options = array(
+			'conditions' => array('HardwareConfiguration.telescope_id' => $id),
+			'order' => array('HardwareConfiguration.id' =>'desc')
+		);
+		$hardwareConfiguration = $this->Telescope->HardwareConfiguration->find('first', $options);
+		$this->set(compact('telescope','hardwareConfiguration'));
 	}
 
 /**
@@ -67,19 +74,15 @@ class TelescopesController extends AppController {
  * @return void
  */
 	public function add() {
-	
 		if ($this->request->is('post')) {
 			$this->Telescope->create();
 			if ($this->Telescope->save($this->request->data)) {
-				$this->Session->setFlash(__('The telescope has been saved.'));
+				$this->Session->setFlash(__('The telescope has been saved.'), 'default', array('class' => 'notification'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The telescope could not be saved. Please, try again.'));
 			}
 		}
-		$telescopes = $this->Telescope->find('list');
-		$this->set(compact('telescopes'));
-	
 	}
 
 /**
@@ -90,89 +93,56 @@ class TelescopesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
-	
 		if (!$this->Telescope->exists($id)) {
 			throw new NotFoundException(__('Invalid telescope'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Run->save($this->request->data)) {
-				$this->Session->setFlash(__('The run has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+						
+			$this->Telescope->id = $id;
+			debug($this->request->data);
+						
+			$this->Telescope->recursive = -1;
+			$this->Telescope->HardwareConfiguration->id = $this->Telescope->read('hardware_id',$id)['Telescope']['hardware_id']; 
+			$this->Telescope->HardwareConfiguration->saveField('valid_until', date("Y-m-d H:i:s"));
+			
+			$this->Telescope->HardwareConfiguration->id = null;
+			$hardwareConfiguration = $this->request->data['HardwareConfiguration'];
+			$hardwareConfiguration['telescope_id'] = $id;
+			
+			if($this->Telescope->HardwareConfiguration->save($hardwareConfiguration)){
+				
+				$hardwareConfigurationId=$this->Telescope->HardwareConfiguration->getInsertId();
+				// debug($hardwareConfigurationId);
+				$this->Telescope->HardwareConfiguration->saveField('valid_from', date("Y-m-d H:i:s"));
+			
+				$telescope = $this->request->data['Telescope'];
+				$telescope['hardware_id'] = $hardwareConfigurationId;
+
+				if ($this->Telescope->save($telescope)) {
+					$this->Session->setFlash(__('The telescope has been updated.'), 'default', array('class' => 'notification'));
+					return $this->redirect(array('action' => 'view',$id));
+				} else {
+					$this->Session->setFlash(__('The telescope could not be saved. Please, try again.'));
+				}
 			} else {
-				$this->Session->setFlash(__('The run could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The telescope could not be saved. Please, try again.'));
 			}
 		} else {
-			$options = array('conditions' => array('Run.' . $this->Run->primaryKey => $id));
-			$this->request->data = $this->Run->find('first', $options);
+			//?? Unbind hardwareConfiguration??
+			$options = array('conditions' => array('Telescope.' . $this->Telescope->primaryKey => $id));
+			$this->request->data = $this->Telescope->find('first', $options);
+			
+			$options = array(
+				'conditions' => array('HardwareConfiguration.telescope_id' => $id),
+				'order' => array('HardwareConfiguration.id' =>'desc')
+			);
+			$hardwareConfiguration = $this->Telescope->HardwareConfiguration->find('first', $options);
+			$gps = $this->Telescope->HardwareConfiguration->Gps->find('list');
+			$powerSupplies = $this->Telescope->HardwareConfiguration->PowerSupply->find('list');
+			$triggerCards = $this->Telescope->HardwareConfiguration->TriggerCard->find('list');
+			$weatherStations = $this->Telescope->HardwareConfiguration->WeatherStation->find('list');
+			$this->set(compact('hardwareConfiguration','gps','powerSupplies','triggerCards','weatherStations'));
 		}
-		$Telescopes = $this->Run->find('list');
-		$this->set(compact('Telescopes'));
-	
-	}
-	
-/**
- * find method
- *
- * @return void
- */
-	public function find() {
-	
-		if ( $this->request->is('get') ) {
-
-			if ( $this->request->is('ajax') ) {
-
-				$this->layout = 'ajax';
-				$this->autoRender = false;
-				
-				// start a standard search
-				$this->Prg->commonProcess();
-				// process the URL parameters
-				$params = $this->Prg->parsedParams();
-				// generate the Paginator conditions
-				$conditions = $this->Run->parseCriteria($params);
-		        $nruns = $this->Run->find('count', array('conditions' => $conditions));
-				echo 'Show results '.$nruns;
-				//echo implode(" ",$params);
-					
-			}	
-		    else {
-			
-				// start a standard search
-				$this->Prg->commonProcess();
-				// process the URL parameters
-				$params = $this->Prg->parsedParams();
-				// generate the Paginator conditions
-				$conditions = $this->Run->parseCriteria($params);
-				// add the conditions for paging
-				$this->Paginator->settings['conditions'] = $conditions;
-				$this->set('Telescopes', $this->Paginator->paginate());
-			
-		    }
-		
-	    }
-	}
-
-/**
- * export method
- *
-cake * @return void
- */	
-	public function export() {
-		
-		// start a standard search
-		$this->Prg->commonProcess();
-		// process the URL parameters
-		$params = $this->Prg->parsedParams();
-		// generate the Paginator conditions
-		$conditions = $this->Run->parseCriteria($params);
-		$Telescopes = $this->Run->find('all', array('conditions' => $conditions, 'limit' => 10));
-		$_extract = $this->CsvView->prepareExtractFromFindResults($Telescopes);
-		$_serialize = 'Telescopes';
-		
-		$this->response->download('my_file.csv'); // <= setting the file name
-		$this->viewClass = 'CsvView.Csv';
-		$this->set(compact('Telescopes', '_serialize','_extract'));
-
 	}
 
 /**
@@ -183,19 +153,16 @@ cake * @return void
  * @return void
  */
 	public function delete($id = null) {
-	
-		$this->Run->id = $id;
-		if (!$this->Run->exists()) {
-			throw new NotFoundException(__('Invalid run'));
+		$this->Telescope->id = $id;
+		if (!$this->Telescope->exists()) {
+			throw new NotFoundException(__('Invalid telescope'));
 		}
 		$this->request->allowMethod('post', 'delete');
-		if ($this->Run->delete()) {
-			$this->Session->setFlash(__('The run has been deleted.'));
+		if ($this->Telescope->delete()) {
+			$this->Session->setFlash(__('The telescope has been deleted.'));
 		} else {
-			$this->Session->setFlash(__('The run could not be deleted. Please, try again.'));
+			$this->Session->setFlash(__('The telescope could not be deleted. Please, try again.'));
 		}
 		return $this->redirect(array('action' => 'index'));
-	
 	}
-	
 }

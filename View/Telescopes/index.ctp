@@ -1,5 +1,5 @@
 <?php
-	$this->Html->addCrumb('Telescopes', '/telescopes/index');
+	$this->Html->addCrumb($this->params['controller'], 'index');
 ?>
 
 <div class="telescopes index">
@@ -27,9 +27,8 @@
 		<td><?php echo $this->Html->link(__($telescope['Telescope']['hardware_id']), array('controller' => 'hardwareConfiguration', 'action' => 'view', $telescope['Telescope']['hardware_id'])); ?>&nbsp;</td>
 		<td><?php echo $this->Html->link(__($telescope['Telescope']['software_id']), array('controller' => 'softwareConfiguration', 'action' => 'view', $telescope['Telescope']['software_id'])); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $telescope['Telescope']['id'])); ?>
-			<?php //echo $this->Html->link(__('Edit'), array('action' => 'edit', $telescope['Telescope']['id'])); ?>
-			<?php //echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $telescope['Telescope']['id']), array(), __('Are you sure you want to delete # %s?', $telescope['Telescope']['id'])); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $telescope['Telescope']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $telescope['Telescope']['id']), array(), __('Are you sure you want to delete # %s?', $telescope['Telescope']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

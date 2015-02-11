@@ -1,3 +1,7 @@
+<?php
+	$this->Html->addCrumb($this->params['controller'], 'index');
+?>
+
 <div class="runs index">
 
 	<h2><?php echo __('Runs'); ?></h2>
