@@ -8,8 +8,16 @@
 	$this->Html->addCrumb($this->params['controller'], 'index');
 	$this->Html->addCrumb($this->params['action'].' '.$telescope['Telescope']['name'], $this->params['action'].'/'.$telescope['Telescope']['id']);
 	
-	debug($telescope);
-	debug($hardwareConfiguration);
+	//debug($telescope);
+	//debug($hardwareConfiguration);
+	//debug($hardwareStates);
+	
+	function getProperColor($var) {
+		if ($var > 0 && $var < 5) return '#CC0000';
+		else if ($var >= 5 && $var < 10) return '#00CCCC';
+		else if ($var == 10) return '#00CC00';
+		else return '#FFFFFF';
+	}
 ?>
 	
 <div class="telescopes view">
@@ -38,29 +46,47 @@
 			<dl>
 		</div>
 		<div id="hardwareConfigurations">
-			<dl>
-				<dt><?php echo __('Gps'); ?></dt>
-				<dd>
-					<?php echo h($hardwareConfiguration['Gps']['name']); ?>
-					&nbsp;
-				</dd>
-				<dt><?php echo __('Power supply'); ?></dt>
-				<dd>
-					<?php echo h($hardwareConfiguration['PowerSupply']['name']); ?>
-					&nbsp;
-				</dd>
-				<dt><?php echo __('Trigger card'); ?></dt>
-				<dd>
-					<?php echo h($hardwareConfiguration['TriggerCard']['name']); ?>
-					&nbsp;
-				</dd>
-				<dt><?php echo __('Weather station'); ?></dt>
-				<dd>
-					<?php echo h($hardwareConfiguration['WeatherStation']['name']); ?>
-					&nbsp;
-				</dd>
-
-			</dl>
+			<table class="configurations">
+				<thead>
+					<tr>
+						<th>&nbsp;</th>
+						<th>Type</th>
+						<th>State</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td><?php echo __('Gps'); ?></td>
+						<td><?php echo h($hardwareConfiguration['Gps']['name']); ?></td>
+						<td style="color: <?php echo getProperColor($hardwareConfiguration['HardwareConfiguration']['gps_state_id']) ?>">
+							<?php echo h($hardwareStates[$hardwareConfiguration['HardwareConfiguration']['gps_state_id']]); ?>
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td><?php echo __('Power supply'); ?></td>
+						<td><?php echo h($hardwareConfiguration['PowerSupply']['name']); ?></td>
+						<td style="color: <?php echo getProperColor($hardwareConfiguration['HardwareConfiguration']['power_supply_state_id']) ?>">
+							<?php echo h($hardwareStates[$hardwareConfiguration['HardwareConfiguration']['power_supply_state_id']]); ?>
+						</td>
+					</tr>
+					<tr>
+						<td><?php echo __('Trigger card'); ?></td>
+						<td><?php echo h($hardwareConfiguration['TriggerCard']['name']); ?></td>
+						<td style="color: <?php echo getProperColor($hardwareConfiguration['HardwareConfiguration']['trigger_card_state_id']) ?>">
+							<?php echo h($hardwareStates[$hardwareConfiguration['HardwareConfiguration']['trigger_card_state_id']]); ?>
+						</td>
+					</tr>
+					<tr>
+						<td><?php echo __('Weather station'); ?></td>
+						<td><?php echo h($hardwareConfiguration['WeatherStation']['name']); ?></td>
+						<td style="color: <?php echo getProperColor($hardwareConfiguration['HardwareConfiguration']['weather_station_state_id']) ?>">
+							<?php echo h($hardwareStates[$hardwareConfiguration['HardwareConfiguration']['weather_station_state_id']]); ?>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 
 	</div>

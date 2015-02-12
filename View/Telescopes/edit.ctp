@@ -8,7 +8,8 @@
 	$this->Html->addCrumb($this->params['controller'], 'index');
 	$this->Html->addCrumb($this->params['action'].' '.$this->request->data['Telescope']['name'], $this->params['action'].'/'.$this->request->data['Telescope']['id']);
 
-	debug($this->request->data);
+	//debug($hardwareConfiguration);
+	//debug($this->request->data);
 ?>
 
 <div class="telescopes form">
@@ -30,44 +31,110 @@
 			</div>
 			
 			<div id="hardwareConfigurations">
-				<?php
-					echo $this->Form->input('HardwareConfiguration.gps_id',
-						array(
-							'type'=>'select',
-							'div' => false,
-							'label'=>'Gps',
-							'options'=>$gps,
-							'selected'=>$hardwareConfiguration['Gps']['id']
-						)
-					);
-					echo $this->Form->input('HardwareConfiguration.power_supply_id',
-						array(
-							'type'=>'select',
-							'div' => false,
-							'label'=>'Power supply',
-							'options'=>$powerSupplies,
-							'selected'=>$hardwareConfiguration['PowerSupply']['id']
-						)
-					);
-					echo $this->Form->input('HardwareConfiguration.trigger_card_id',
-						array(
-							'type'=>'select',
-							'div' => false,
-							'label'=>'Trigger card',
-							'options'=>$triggerCards,
-							'selected'=>$hardwareConfiguration['TriggerCard']['id']
-						)
-					);
-					echo $this->Form->input('HardwareConfiguration.weather_station_id',
-						array(
-							'type'=>'select',
-							'div' => false,
-							'label'=>'Weather station',
-							'options'=>$weatherStations,
-							'selected'=>$hardwareConfiguration['WeatherStation']['id']
-						)
-					);
-				?>
+				<table class="configurations">
+					<thead>
+						<tr>
+							<th>&nbsp;</th>
+							<th>Type</th>
+							<th>State</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td><?php echo __('Gps'); ?></td>
+							<td><?php echo $this->Form->input('HardwareConfiguration.gps_id',
+										array(
+											'type'=>'select',
+											'div' => false,
+											'label'=> false,
+											'options'=>$gps,
+											'selected'=>$hardwareConfiguration['HardwareConfiguration']['gps_id']
+										)
+									);
+								?></td>
+							<td><?php echo $this->Form->input('HardwareConfiguration.gps_state_id',
+										array(
+											'type'=>'select',
+											'div' => false,
+											'label'=> false,
+											'options'=>$hardwareStates,
+											'selected'=>$hardwareConfiguration['HardwareConfiguration']['gps_state_id']
+										)
+									);
+								?></td>
+						<tr>
+						<tr>
+							<td><?php echo __('Power supply'); ?></td>
+							<td><?php echo $this->Form->input('HardwareConfiguration.power_supply_id',
+										array(
+											'type'=>'select',
+											'div' => false,
+											'label'=> false,
+											'options'=>$powerSupplies,
+											'selected'=>$hardwareConfiguration['HardwareConfiguration']['power_supply_id']
+										)
+									);
+								?></td>
+							<td><?php echo $this->Form->input('HardwareConfiguration.power_supply_state_id',
+										array(
+											'type'=>'select',
+											'div' => false,
+											'label'=> false,
+											'options'=>$hardwareStates,
+											'selected'=>$hardwareConfiguration['HardwareConfiguration']['power_supply_state_id']
+										)
+									);
+								?></td>
+						<tr>
+						<tr>
+							<td><?php echo __('Trigger card'); ?></td>
+							<td><?php echo $this->Form->input('HardwareConfiguration.trigger_card_id',
+										array(
+											'type'=>'select',
+											'div' => false,
+											'label'=> false,
+											'options'=>$triggerCards,
+											'selected'=>$hardwareConfiguration['HardwareConfiguration']['trigger_card_id']
+										)
+									);
+								?></td>
+							<td><?php echo $this->Form->input('HardwareConfiguration.trigger_card_state_id',
+										array(
+											'type'=>'select',
+											'div' => false,
+											'label'=> false,
+											'options'=>$hardwareStates,
+											'selected'=>$hardwareConfiguration['HardwareConfiguration']['trigger_card_state_id']
+										)
+									);
+								?></td>
+						<tr>
+						<tr>
+							<td><?php echo __('Weather station'); ?></td>
+							<td><?php echo $this->Form->input('HardwareConfiguration.weather_station_id',
+										array(
+											'type'=>'select',
+											'div' => false,
+											'label'=> false,
+											'options'=>$weatherStations,
+											'selected'=>$hardwareConfiguration['HardwareConfiguration']['weather_station_id']
+										)
+									);
+								?></td>
+							<td><?php echo $this->Form->input('HardwareConfiguration.weather_station_state_id',
+										array(
+											'type'=>'select',
+											'div' => false,
+											'label'=> false,
+											'options'=>$hardwareStates,
+											'selected'=>$hardwareConfiguration['HardwareConfiguration']['weather_station_state_id']
+										)
+									);
+								?></td>
+						<tr>
+				</tbody>
+				</table>
 			</div>
 			
 		</div>
