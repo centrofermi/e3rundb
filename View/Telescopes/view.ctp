@@ -62,7 +62,6 @@
 						<td style="color: <?php echo getProperColor($hardwareConfiguration['HardwareConfiguration']['gps_state_id']) ?>">
 							<?php echo h($hardwareStates[$hardwareConfiguration['HardwareConfiguration']['gps_state_id']]); ?>
 						</td>
-						<td>&nbsp;</td>
 					</tr>
 					<tr>
 						<td><?php echo __('Power supply'); ?></td>
@@ -87,6 +86,12 @@
 					</tr>
 				</tbody>
 			</table>
+			<div class='time'>
+				<?php
+					$date = date_create($hardwareConfiguration['HardwareConfiguration']['valid_from']);
+					echo 'Last update: '.$date->format('g:ia \o\n l jS F Y'); 
+				?>
+			</div>
 		</div>
 
 	</div>
