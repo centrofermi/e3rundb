@@ -38,7 +38,7 @@ class RunsController extends AppController {
  * @return void
  */
 	public function index() {
-
+				
 		$this->Run->recursive = 0;
 		$this->set('runs', $this->Paginator->paginate());
 		

@@ -72,6 +72,8 @@ Cache::config('default', array('engine' => 'File'));
  
  CakePlugin::load('Search');
  CakePlugin::load('CsvView');
+ CakePlugin::load('Icing');
+ CakePlugin::load('DatabaseLogger');
 
 /**
  * You can attach event listeners to the request lifecycle as Dispatcher Filter. By default CakePHP bundles two filters:
@@ -96,16 +98,21 @@ Configure::write('Dispatcher.filters', array(
 ));
 
 /**
- * Configures default file logging options
+ * Configures logging options (both database and file)
+ * ! in cakephp version 2 scopes cannot be implemented in custom log stream
  */
-App::uses('CakeLog', 'Log');
+App::uses('CakeLog','Log');
+CakeLog::config('default', array(
+	'engine' => 'DatabaseLogger.DatabaseLog',
+	'types' => array('info'),
+));
 CakeLog::config('debug', array(
 	'engine' => 'File',
-	'types' => array('notice', 'info', 'debug'),
-	'file' => 'debug',
+	'types' => array('notice', 'debug'),
+	'file' => 'debug'
 ));
 CakeLog::config('error', array(
 	'engine' => 'File',
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
-	'file' => 'error',
+	'file' => 'error'
 ));

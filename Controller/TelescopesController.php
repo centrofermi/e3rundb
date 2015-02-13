@@ -128,6 +128,8 @@ class TelescopesController extends AppController {
 					$hardwareConfigurationId=$this->Telescope->HardwareConfiguration->getInsertId();
 					$this->Telescope->HardwareConfiguration->saveField('valid_from', date("Y-m-d H:i:s"));
 					$telescope['hardware_id'] = $hardwareConfigurationId;
+
+					Cakelog::write('info',$telescope['name'].': hardware configuration update');
 					
 				} else $error = true;
 			}
