@@ -101,7 +101,6 @@
 		
 		$('#select_from_runID').change(function() {
 					    
-			alert("cia");
 			$('#RunRunIDBetween').val(  $(this).val() + ' - ' +  $('#select_to_runID').val() );
             updateSearch();
 			
