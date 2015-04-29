@@ -1,11 +1,11 @@
 <script type="text/javascript" charset="utf-8">
 	
 	var itsclicked = false;
-	var absurl = '<?php echo $this->Html->url(array('controller' => 'runs', 'action' => 'find'), true); ?>';
-	if(absurl.indexOf("www.cnaf.infn.it")>0){
+	var absurl = '<?php echo $this->Html->url(array('controller' => 'runs', 'action' => 'find'), false); ?>';
+	/*if(absurl.indexOf("www.cnaf.infn.it")>0){
 		absurl = absurl.replace("http","https");
 		absurl = absurl.replace("www.cnaf.infn.it","www.cnaf.infn.it/eee");
-	}
+	}*/
 	
 	function updateSearch(){
 	
