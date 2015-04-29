@@ -27,7 +27,7 @@
 		else to_runID = '1000000';		
 		queryurl += 'runIDBetween=' + from_runID + '+-+' + to_runID;		
 		
-		alert(absurl);
+		alert(queryurl);
 		$.ajax({
 			url: queryurl,
 			cache: false,
