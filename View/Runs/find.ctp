@@ -42,8 +42,8 @@
 	
 	};
 	
-	$(document).ajaxError(function() {
-		alert("ajax error");
+	$(document).ajaxError(function(event, jqxhr, settings, thrownError) {
+		alert(settings + " " + thrownError);
 	});
 	
 	$(document).ready(function(){
