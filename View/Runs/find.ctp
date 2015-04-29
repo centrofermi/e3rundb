@@ -42,6 +42,10 @@
 	
 	};
 	
+	$(document).ajaxError(function() {
+		alert("ajax error");
+	});
+	
 	$(document).ready(function(){
 	
 		$('#searchButton').hide();
