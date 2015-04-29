@@ -43,7 +43,7 @@
 	};
 	
 	$(document).ajaxError(function(event, jqxhr, settings, thrownError) {
-		alert(settings.url);
+		alert(thrownError);
 	});
 	
 	$(document).ready(function(){
