@@ -2,7 +2,8 @@
 	
 	var itsclicked = false;
 	var absurl = '<?php echo $this->Html->url(array('controller' => 'runs', 'action' => 'find'), true); ?>';
-
+	if(absurl.indexOf("www.cnaf.infn.it")>0) absurl = absurl.replace("www.cnaf.infn.it","www.cnaf.infn.it/eee");
+	
 	function updateSearch(){
 	
 		var queryurl = absurl;
@@ -23,7 +24,7 @@
 		else to_runID = '1000000';		
 		queryurl += 'runIDBetween=' + from_runID + '+-+' + to_runID;		
 		
-		alert(queryurl);
+		alert(absurl);
 		$.ajax({
 			url: queryurl,
 			cache: false,
