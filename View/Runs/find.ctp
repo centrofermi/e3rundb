@@ -2,7 +2,7 @@
 	
 	var itsclicked = false;
 	var absurl = '<?php echo $this->Html->url(array('controller' => 'runs', 'action' => 'find'), true); ?>';
-	if(absurl.indexOf("https://www.cnaf.infn.it")>0) absurl = absurl.replace("https://www.cnaf.infn.it","https://www.cnaf.infn.it/eee");
+	if(absurl.indexOf("https://www.cnaf.infn.it")>0) absurl = absurl.replace("https://www.cnaf.infn.it","https://www.cnaf.infn.it/eeeABC");
 	
 	function updateSearch(){
 	
