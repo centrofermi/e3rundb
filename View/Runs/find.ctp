@@ -30,7 +30,7 @@
 			type: 'GET',
 			dataType: 'HTML',
 			success: function(data) {
-				alert(data);
+				alert(queryurl);
 				$('#searchButton').val(data);
 				$('#searchButton').show();
 			}
