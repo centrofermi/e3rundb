@@ -34,6 +34,7 @@
 			type: 'GET',
 			dataType: 'HTML',
 			success: function(data) {
+				alert(data);
 				$('#searchButton').val(data);
 				$('#searchButton').show();
 			}
