@@ -39,7 +39,7 @@ class RunsController extends AppController {
  */
 	public function index() {
 				
-		$this->Run->recursive = 0;
+		$this->Run->recursive = -1;
 		$this->set('runs', $this->Paginator->paginate());
 		
 	}
@@ -145,6 +145,7 @@ class RunsController extends AppController {
 				$conditions = $this->Run->parseCriteria($params);
 				// add the conditions for paging
 				$this->Paginator->settings['conditions'] = $conditions;
+				$this->Run->recursive = -1;
 				$this->set('runs', $this->Paginator->paginate());
 			
 		    }
