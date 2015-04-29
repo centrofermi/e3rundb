@@ -23,7 +23,7 @@
 		else to_runID = '1000000';		
 		queryurl += 'runIDBetween=' + from_runID + '+-+' + to_runID;		
 		
-		//alert(queryurl);
+		alert(queryurl);
 		$.ajax({
 			url: queryurl,
 			cache: false,
@@ -39,7 +39,7 @@
 	
 	$(document).ready(function(){
 	
-		//$('#searchButton').hide();
+		$('#searchButton').hide();
 
 		$('#station_name').change(function() {  updateSearch();} );
 
