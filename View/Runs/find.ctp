@@ -39,7 +39,7 @@
 	
 	$(document).ready(function(){
 	
-		$('#searchButton').hide();
+		//$('#searchButton').hide();
 
 		$('#station_name').change(function() {  updateSearch();} );
 
