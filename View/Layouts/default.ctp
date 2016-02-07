@@ -38,6 +38,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+    <?php echo $this->Html->scriptBlock('var jsVars = '.$this->Js->object($jsVars).';'); ?>
 </head>
 <body>
 	<div id="container">
@@ -47,7 +48,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				echo $this->Html->getCrumbs(' > ', array(
 					//'text' => $this->Html->image('home.png'),
 					'text' => 'Home',
-					'url' => array('plugin' => null,'controller' => 'runs', 'action' => 'index'),
+					'url' => array('plugin' => null,'controller' => 'pages', 'action' => 'display'),
 					'escape' => false));
 			?>
 		</div>

@@ -20,7 +20,7 @@
 	}
 ?>
 	
-<div class="telescopes view">
+<div class="telescopes list_changes">
 	<h2><?php echo __('Telescope'); ?></h2>
 
 	<div id="tabs">
@@ -155,7 +155,6 @@
 	<ul>
 <!--		<li><?php echo $this->Html->link(__('Edit Telescope'), array('action' => 'edit', $telescope['Telescope']['id'])); ?> </li> -->
 <!--		<li><?php echo $this->Form->postLink(__('Delete Telescope'), array('action' => 'delete', $telescope['Telescope']['id']), array(), __('Are you sure you want to delete # %s?', $telescope['Telescope']['id'])); ?> </li> -->
-		<li><?php echo $this->Html->link(__('Configurations log'), array('action' => 'list_changes')); ?> </li>
 		<li><?php echo $this->Html->link(__('Back'), array('action' => 'index')); ?> </li>
 <!--		<li><?php echo $this->Html->link(__('Back'), $this->request->referer()); ?></li> -->
 	</ul>

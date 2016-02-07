@@ -41,7 +41,41 @@ class TelescopesController extends AppController {
  */
 	public function index() {
 		$this->Telescope->recursive = 0;
+		$this->paginate = array(
+			'recursive' => 0,
+			'order' => array('name' => 'asc')
+		);
 		$this->set('telescopes', $this->Paginator->paginate());
+	}
+	
+/**
+ * view_map method
+ *
+ * @return void
+ */
+	public function viewMap() {
+		$this->paginate = array(
+			'recursive' => 0,
+			'order' => array('name' => 'asc')
+		);
+		$this->set('telescopes', $this->Paginator->paginate());
+
+		$this->Telescope->recursive = 0;		
+		$telescopes = $this->Telescope->find('all');
+		$iConf = 0;
+		foreach ($telescopes as $telescope){
+			$options = array(
+				'conditions' => array('DaqConfiguration.id' => $telescope['Telescope']['daq_id']),
+			);
+			$daqConfiguration = $this->Telescope->DaqConfiguration->find('first', $options);
+			if(!empty($daqConfiguration)){
+				//debug($daqConfiguration);
+				$this->setJsVar('lat_'.$iConf, $daqConfiguration['DaqConfiguration']['gps_latitude']);
+				$this->setJsVar('lon_'.$iConf, $daqConfiguration['DaqConfiguration']['gps_longitude']);
+				$iConf++;
+			}
+			$this->setJsVar('totConfFound', $iConf);
+		}
 	}
 
 /**
@@ -57,20 +91,26 @@ class TelescopesController extends AppController {
 			throw new NotFoundException(__('Invalid telescope'));
 		}
 		$this->Telescope->unbindModel(
-			array('hasMany' => array('HardwareConfiguration', 'SoftwareConfiguration'))
+			array('hasMany' => array('DaqConfiguration','HardwareConfiguration', 'SoftwareConfiguration'))
 		);	
 		$options = array('conditions' => array('Telescope.' . $this->Telescope->primaryKey => $id));
 		$telescope = $this->Telescope->find('first', $options);
+		
+		$options = array(
+			'conditions' => array('DaqConfiguration.telescope_id' => $id),
+			'order' => array('DaqConfiguration.id' =>'desc')
+		);
+		$daqConfiguration = $this->Telescope->DaqConfiguration->find('first', $options);
+		
 		$options = array(
 			'conditions' => array('HardwareConfiguration.telescope_id' => $id),
 			'order' => array('HardwareConfiguration.id' =>'desc')
-		);
-
+		);		
 		$hardwareConfiguration = $this->Telescope->HardwareConfiguration->find('first', $options);
 		$this->loadModel('HardwareState');
 		$hardwareStates = $this->HardwareState->find('list');
 
-		$this->set(compact('telescope','hardwareConfiguration','hardwareStates'));
+		$this->set(compact('telescope','daqConfiguration','hardwareConfiguration','hardwareStates'));
 	}
 
 /**
@@ -112,6 +152,28 @@ class TelescopesController extends AppController {
 			$telescope = $this->request->data['Telescope'];
 			$telescope['id'] = $id;
 			
+			//update Daq configuration
+			$daqConfiguration = $this->request->data['DaqConfiguration'];
+			$daqConfiguration['telescope_id'] = $id;
+			$daqConfiguration['valid_until'] = null;
+			if($this->Telescope->DaqConfiguration->find('count', array('conditions' => $daqConfiguration)) == 0){
+									
+				$this->Telescope->recursive = -1;
+				$this->Telescope->DaqConfiguration->id = $this->Telescope->read('hardware_id',$id)['Telescope']['hardware_id']; 
+				$this->Telescope->DaqConfiguration->saveField('valid_until', date("Y-m-d H:i:s"));
+			
+				$this->Telescope->DaqConfiguration->id = null;
+				if($this->Telescope->DaqConfiguration->save($daqConfiguration)){
+					
+					$daqConfigurationId=$this->Telescope->DaqConfiguration->getInsertId();
+					$this->Telescope->DaqConfiguration->saveField('valid_from', date("Y-m-d H:i:s"));
+					$telescope['hardware_id'] = $daqConfigurationId;
+
+					Cakelog::write('info',$telescope['name'].': daq configuration update');
+					
+				} else $error = true;
+			}
+
 			//update Hardware configuration
 			$hardwareConfiguration = $this->request->data['HardwareConfiguration'];
 			$hardwareConfiguration['telescope_id'] = $id;
@@ -188,5 +250,40 @@ class TelescopesController extends AppController {
 			$this->Session->setFlash(__('The telescope could not be deleted. Please, try again.'));
 		}
 		return $this->redirect(array('action' => 'index'));
+	}
+
+/**
+ * list_changes method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function list_changes($id = null) {
+		
+		if (!$this->Telescope->exists($id)) {
+			throw new NotFoundException(__('Invalid telescope'));
+		}
+		$this->Telescope->unbindModel(
+			array('hasMany' => array('DaqConfiguration','HardwareConfiguration','SoftwareConfiguration'))
+		);	
+		$options = array('conditions' => array('Telescope.' . $this->Telescope->primaryKey => $id));
+		$telescope = $this->Telescope->find('first', $options);
+		
+		$options = array(
+			'conditions' => array('DaqConfiguration.telescope_id' => $id),
+			'order' => array('DaqConfiguration.id' =>'desc')
+		);
+		$daqConfiguration = $this->Telescope->DaqConfiguration->find('first', $options);
+		
+		$options = array(
+			'conditions' => array('HardwareConfiguration.telescope_id' => $id),
+			'order' => array('HardwareConfiguration.id' =>'desc')
+		);		
+		$hardwareConfiguration = $this->Telescope->HardwareConfiguration->find('first', $options);
+		$this->loadModel('HardwareState');
+		$hardwareStates = $this->HardwareState->find('list');
+
+		$this->set(compact('telescope','daqConfiguration','hardwareConfiguration','hardwareStates'));
 	}
 }

@@ -39,6 +39,17 @@ class Telescope extends AppModel {
  * @var array
  */
 	public $hasMany = array(
+		'DaqConfiguration' => array(
+			'className' => 'DaqConfiguration',
+			'foreignKey' => 'telescope_id',
+			// 'conditions' => '',
+			// 'order' => '',
+			// 'limit' => '',
+			// 'offset' => '',
+			'dependent' => true,
+			'exclusive' => true
+			// 'finderQuery' => ''
+		),
 		'HardwareConfiguration' => array(
 			'className' => 'HardwareConfiguration',
 			'foreignKey' => 'telescope_id',

@@ -31,4 +31,40 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+	
+	  /**
+     * Array to hold js variables to be used in layout/view.
+     *
+     * @var   array $_jsVars Array of the js variables to be used in the layout/view
+     */
+    var $_jsVars = array();
+ 
+    /**
+     * Method to set javascript variables
+     *
+     * This method puts the passed variable in an array. That array is
+     * then converted to json object in layout and can be used
+     * in js files
+     *
+     * @param string $name Name of the variable
+     * @param mixed $value Value of the variable
+     *
+     * @return void
+     */
+    public function setJsVar($name, $value)
+    {
+        $this->_jsVars[$name] = $value;
+    }//end setJsVar()
+ 
+    /**
+     * Function (callback) which gets called before rendering the output
+     *
+     * @return void
+     */
+    public function beforeRender()
+    {
+        // Set the jsVars array which holds the variables to be used in js
+        $this->set('jsVars', $this->_jsVars);
+    }
+
 }

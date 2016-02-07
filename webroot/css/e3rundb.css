@@ -30,6 +30,7 @@ body {
 	background: #fff;
 	text-align: center;
 }
+
 a {
 	color: #06c;
 	text-decoration: none;
@@ -78,7 +79,6 @@ p {
 #container {
 	text-align: left;
 }
-
 #header{
 	padding: 10px 10px;
 }

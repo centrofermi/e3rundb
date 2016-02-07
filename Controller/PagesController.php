@@ -38,6 +38,13 @@ class PagesController extends AppController {
 	public $uses = array();
 
 /**
+ * Helpers
+ *
+ * @var array
+ */	
+	public $helpers = array('Js' => array('Jquery'));
+
+/**
  * Displays a view
  *
  * @return void
