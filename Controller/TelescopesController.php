@@ -159,7 +159,7 @@ class TelescopesController extends AppController {
 			if($this->Telescope->DaqConfiguration->find('count', array('conditions' => $daqConfiguration)) == 0){
 									
 				$this->Telescope->recursive = -1;
-				$this->Telescope->DaqConfiguration->id = $this->Telescope->read('hardware_id',$id)['Telescope']['hardware_id']; 
+				$this->Telescope->DaqConfiguration->id = $this->Telescope->read('daq_id',$id)['Telescope']['daq_id']; 
 				$this->Telescope->DaqConfiguration->saveField('valid_until', date("Y-m-d H:i:s"));
 			
 				$this->Telescope->DaqConfiguration->id = null;
