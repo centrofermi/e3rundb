@@ -167,7 +167,7 @@ class TelescopesController extends AppController {
 					
 					$daqConfigurationId=$this->Telescope->DaqConfiguration->getInsertId();
 					$this->Telescope->DaqConfiguration->saveField('valid_from', date("Y-m-d H:i:s"));
-					$telescope['hardware_id'] = $daqConfigurationId;
+					$telescope['daq_id'] = $daqConfigurationId;
 
 					Cakelog::write('info',$telescope['name'].': daq configuration update');
 					
