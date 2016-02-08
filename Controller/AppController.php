@@ -66,5 +66,5 @@ class AppController extends Controller {
         // Set the jsVars array which holds the variables to be used in js
         $this->set('jsVars', $this->_jsVars);
     }
-
+	
 }

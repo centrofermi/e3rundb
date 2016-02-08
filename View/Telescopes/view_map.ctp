@@ -25,12 +25,12 @@
 <?php echo $this->Html->script('ol.js', array('inline'=>false)); ?>
 <script type="text/javascript">
 
-	var test = "totConfFound";
+	var markerImgPath = jsVars.absImgPath.concat("openLayers/dot.png");
 	var totTel = parseInt(jsVars.totConfFound);
+	
 	var Telescopes = new Array();
 	var lon = 0;
-	var lat = 0; 
-	
+	var lat = 0; 	
 	var iTel = 0;
 	var jTel = 0;
 	while(iTel<totTel){
@@ -58,7 +58,7 @@
 		Telescopes[jTel].setStyle(new ol.style.Style({
 			image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
 			color: '#00FF00',
-			src: '/CAKEPHP/E3RUNDB/img/openLayers/dot.png'
+			src: markerImgPath
 			}))
 		}));
 		

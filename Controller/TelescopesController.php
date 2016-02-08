@@ -74,8 +74,10 @@ class TelescopesController extends AppController {
 				$this->setJsVar('lon_'.$iConf, $daqConfiguration['DaqConfiguration']['gps_longitude']);
 				$iConf++;
 			}
-			$this->setJsVar('totConfFound', $iConf);
 		}
+		$this->setJsVar('totConfFound', $iConf);
+    	$this->setJsVar('absImgPath', $this->webroot."img/");
+
 	}
 
 /**
