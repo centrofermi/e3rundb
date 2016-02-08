@@ -21,7 +21,8 @@
 	</ul>
 </div>
 
-<script src="http://openlayers.org/en/v3.13.1/build/ol.js" type="text/javascript"></script>
+<!-- <script src="http://openlayers.org/en/v3.13.1/build/ol.js" type="text/javascript"></script> -->
+<?php echo $this->Html->script('ol.js', array('inline'=>false)); ?>
 <script type="text/javascript">
 
 	var test = "totConfFound";
