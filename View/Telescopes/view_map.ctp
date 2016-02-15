@@ -1,14 +1,15 @@
 <?php
-//$this->Html->addCrumb($this->params['controller'], 'telescopes/index');
+	echo $this->Html->css('ol');
+	echo $this->Html->script('ol', array('inline'=>false));	
+	echo $this->Html->script('bootstrap.min', array('inline'=>false));	
+	
 ?>
 
 <div class="telescopes view_map">
 
-	<link rel="stylesheet" href="http://openlayers.org/en/v3.13.1/css/ol.css" type="text/css">
-
 	<div class="view" id="mapcontainer">
 		<h2><?php echo __('Telescopes network'); ?></h2>
-		<div id="map" style="height: 600px"></div>
+		<div id="map" style="height: 600px"><div id="popup"></div></</div>
 	</div>
 	
 </div>
@@ -21,26 +22,25 @@
 	</ul>
 </div>
 
-<!-- <script src="http://openlayers.org/en/v3.13.1/build/ol.js" type="text/javascript"></script> -->
-<?php echo $this->Html->script('ol.js', array('inline'=>false)); ?>
 <script type="text/javascript">
 
-	var markerImgPath = jsVars.absImgPath.concat("openLayers/dot.png");
+	var markerImgPath = jsVars.absImgPath.concat("openLayers/eeeIcon.png");
 	var totTel = parseInt(jsVars.totConfFound);
 	
 	var Telescopes = new Array();
-	var lon = 0;
-	var lat = 0; 	
-	var iTel = 0;
-	var jTel = 0;
+	var telName;
+	var lon = 0; var lat = 0; 	
+	var iTel = 0; var jTel = 0;
 	while(iTel<totTel){
 				
 		iTel++;
 
+		var telName_name = "name_"; telName_name+=iTel;
+		telName = jsVars[telName_name]; 
 		var lon_name = "lon_"; lon_name+=iTel;
-		var lat_name = "lat_"; lat_name+=iTel;
 		lon = parseFloat(jsVars[lon_name]); 
 		if(isNaN(lon)){continue;}
+		var lat_name = "lat_"; lat_name+=iTel;
 		lat = parseFloat(jsVars[lat_name]);
 		if(isNaN(lat)){continue;}
 		
@@ -52,12 +52,15 @@
 		}
 		
 		Telescopes[jTel] = new ol.Feature({
-			geometry: new ol.geom.Point(ol.proj.fromLonLat([lon, lat]))
+			geometry: new ol.geom.Point(ol.proj.fromLonLat([lon, lat])),
+			name: telName
 		});
  
 		Telescopes[jTel].setStyle(new ol.style.Style({
 			image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
-			color: '#00FF00',
+			anchor: [0.5, 46],
+			anchorXUnits: 'fraction',
+			anchorYUnits: 'pixels',
 			src: markerImgPath
 			}))
 		}));
@@ -89,5 +92,55 @@
 		})
     });
 	
+	var element = document.getElementById('popup');
+	$(element).popover({
+		'placement': 'top',
+		'html': true,
+	});
+	
+	var popup = new ol.Overlay({
+		element: element,
+		positioning: 'bottom-center',
+		stopEvent: false
+	});
+	map.addOverlay(popup);
+
+	// display popup on click
+	var curr_feature_name;
+	var popShown = false;
+	map.on('click', function(evt) {
+		var feature = map.forEachFeatureAtPixel(evt.pixel,
+			function(feature) {
+			  return feature;
+			});
+		
+		if (feature){
+			curr_feature_name = feature.get('name');
+			popup.setPosition(evt.coordinate);
+			if($(element).data('bs.popover')) {
+				$(element).data('bs.popover').options.content = curr_feature_name;
+			}
+			$(element).popover('show');
+			$(element).on('shown.bs.popover', function () {
+				popShown = true;
+			})
+		} else { 
+			$(element).popover('hide');
+		}
+	});
+
+	// change mouse cursor when over marker
+	map.on('pointermove', function(e) {
+	if (e.dragging) {
+	  $(element).popover('destroy');
+	  return;
+	}
+	var pixel = map.getEventPixel(e.originalEvent);
+	var hit = map.hasFeatureAtPixel(pixel);
+	map.getTarget().style.cursor = hit ? 'pointer' : '';
+
+	});
+	
 </script>
 
+	

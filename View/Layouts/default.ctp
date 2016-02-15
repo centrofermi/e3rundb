@@ -28,12 +28,13 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('e3rundb');
-		
+		echo $this->Html->css('e3rundb');		
 		echo $this->Html->css('cupertino/jquery-ui-1.11.1.min.css');
+		echo $this->Html->css('bootstrap.min.css');
 		
 		echo $this->Html->script('jquery-1.10.2'); // Include JQuery library
 		echo $this->Html->script('jquery-ui-1.11.1.min'); // Include JQuery UI library
+
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
@@ -48,7 +49,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				echo $this->Html->getCrumbs(' > ', array(
 					//'text' => $this->Html->image('home.png'),
 					'text' => 'Home',
-					'url' => array('plugin' => null,'controller' => 'pages', 'action' => 'display'),
+					'url' => array('plugin' => null,'controller' => 'telescopes', 'action' => 'viewMap'),
 					'escape' => false));
 			?>
 		</div>

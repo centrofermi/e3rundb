@@ -70,11 +70,12 @@ Cache::config('default', array('engine' => 'File'));
  *
  */
  
- CakePlugin::load('Search');
+ CakePlugin::load('BoostCake'); 
  CakePlugin::load('CsvView');
- CakePlugin::load('Icing');
  CakePlugin::load('DatabaseLogger');
-
+ CakePlugin::load('Icing');
+ CakePlugin::load('Search');
+ 
 /**
  * You can attach event listeners to the request lifecycle as Dispatcher Filter. By default CakePHP bundles two filters:
  *
