@@ -18,6 +18,8 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 <!--		<li><?php echo $this->Html->link(__('Back'), $this->request->referer()); ?></li> -->
+		<li><?php echo $this->Html->link(__('Run list'), array('controller' => 'Runs','action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('Telescope list'), array('controller' => 'Telescopes','action' => 'index')); ?></li>
 		<li><?php echo $this->Html->link(__('Back'), array('controller' => 'pages','action' => 'index')); ?></li>
 	</ul>
 </div>
