@@ -27,10 +27,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-
-		echo $this->Html->css('e3rundb');		
 		echo $this->Html->css('cupertino/jquery-ui-1.11.1.min.css');
 		echo $this->Html->css('bootstrap.min.css');
+		echo $this->Html->css('e3rundb');		
 		
 		echo $this->Html->script('jquery-1.10.2'); // Include JQuery library
 		echo $this->Html->script('jquery-ui-1.11.1.min'); // Include JQuery UI library

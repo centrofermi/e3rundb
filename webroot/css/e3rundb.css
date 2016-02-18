@@ -24,7 +24,7 @@
 /** General Style Info **/
 body {
 	font-family: Ubuntu, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 80%;
+	font-size: 16px;
 	margin: 0;
 	color: #333;
 	background: #fff;
@@ -55,13 +55,13 @@ h1 {
 	border:0px;
 }
 h2 {
-	font-size: 26px;
+	font-size: 32px;
 	color: #08c;
 	text-align: center;
 	margin-bottom:3px;
 }
 h3 {
-	font-size: 16px;
+	font-size: 24px;
 	color: #333;
 	margin:0px;
 	padding:0px;
@@ -367,18 +367,6 @@ dl.input {
 dl dd:nth-child(4n+2),
 dl dt:nth-child(4n+1) {
 	background: #f4f4f4;
-}
-
-dt {
-	font-weight: bold;
-	padding-left: 4px;
-	vertical-align: top;
-	width: 15em;
-}
-dd {
-	margin-left: 15em;
-	margin-top: -2em;
-	vertical-align: top;
 }
 
 /** Forms **/
@@ -814,6 +802,10 @@ input[type=submit]:active,
 	text-decoration: none;
 }
 
+.actions .last {
+	margin-top: 10px;
+}
+
 /** Related **/
 .related {
 	clear: both;
@@ -1057,4 +1049,48 @@ td.showDragHandle {
 	background-repeat: no-repeat;
 	background-position: center center;
 	cursor: move;
+}
+
+/* Map ruler (OpenLayer) */
+
+#enableRuler {
+	padding: 10px;
+	font-weight: bold;
+}
+
+.tooltip {
+	position: relative;
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 4px;
+	color: white;
+	padding: 4px 8px;
+	opacity: 0.7;
+	white-space: nowrap;
+}
+
+.tooltip-measure {
+	opacity: 1;
+	font-weight: bold;
+}
+
+.tooltip-static {
+	background-color: #ffcc33;
+	color: black;
+	border: 1px solid white;
+}
+
+.tooltip-measure:before,
+.tooltip-static:before {
+	border-top: 6px solid rgba(0, 0, 0, 0.5);
+	border-right: 6px solid transparent;
+	border-left: 6px solid transparent;
+	content: "";
+	position: absolute;
+	bottom: -6px;
+	margin-left: -7px;
+	left: 50%;
+}
+
+.tooltip-static:before {
+	border-top-color: #ffcc33;
 }

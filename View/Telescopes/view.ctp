@@ -20,7 +20,7 @@
 	}
 ?>
 	
-<div class="telescopes view">
+<div class="view">
 	<h2><?php echo __('Telescope'); ?></h2>
 
 	<div id="tabs">
@@ -30,21 +30,18 @@
 <!--			<li><a href="#hardwareConfigurations"><?php echo __('Hardware Configuration'); ?></a></li> -->
 		</ul>
 		
-		<div id="informations">
+		<div id="informations" class="dl-horizontal">
 			<dl>
 				<dt><?php echo __('Name'); ?></dt>
-				<dd>
-					<?php echo h($telescope['Telescope']['name']); ?>
-					&nbsp;
-				</dd>
+				<dd><div><?php echo h($telescope['Telescope']['name']); ?></div></dd>
 				<dt><?php echo __('Description'); ?></dt>
-				<dd>
-					<?php echo h($telescope['Telescope']['description']); ?>
-					&nbsp;
-				</dd>
+				<dd><div><?php echo h($telescope['Telescope']['description']); ?></div></dd>
 				<dt><?php echo __('Daq status'); ?></dt>
+				<dd><div>&nbsp;</div></dd>
 				<dt><?php echo __('Hardware status'); ?></dt>
+				<dd><div>&nbsp;</div></dd>
 				<dt><?php echo __('Software status'); ?></dt>
+				<dd><div>&nbsp;</div></dd>
 			<dl>
 		</div>
 		
@@ -155,8 +152,8 @@
 	<ul>
 <!--		<li><?php echo $this->Html->link(__('Edit Telescope'), array('action' => 'edit', $telescope['Telescope']['id'])); ?> </li> -->
 <!--		<li><?php echo $this->Form->postLink(__('Delete Telescope'), array('action' => 'delete', $telescope['Telescope']['id']), array(), __('Are you sure you want to delete # %s?', $telescope['Telescope']['id'])); ?> </li> -->
-		<li><?php echo $this->Html->link(__('Configurations log'), array('action' => 'list_changes')); ?> </li>
-		<li><?php echo $this->Html->link(__('Back'), array('action' => 'index')); ?> </li>
+<!--		<li><?php echo $this->Html->link(__('Configurations log'), array('action' => 'list_changes')); ?> </li> -->
+		<li class="last"><?php echo $this->Html->link(__('Back'), array('action' => 'index')); ?> </li>
 <!--		<li><?php echo $this->Html->link(__('Back'), $this->request->referer()); ?></li> -->
 	</ul>
 </div>
