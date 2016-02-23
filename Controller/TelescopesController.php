@@ -69,7 +69,6 @@ class TelescopesController extends AppController {
 			);
 			$daqConfiguration = $this->Telescope->DaqConfiguration->find('first', $options);
 			if(!empty($daqConfiguration)){
-				//debug($daqConfiguration);
 				$this->setJsVar('name_'.$iConf, $daqConfiguration['Telescopes']['name']);
 				$this->setJsVar('lon_'.$iConf, $daqConfiguration['DaqConfiguration']['gps_longitude']);
 				$this->setJsVar('lat_'.$iConf, $daqConfiguration['DaqConfiguration']['gps_latitude']);
