@@ -62,21 +62,18 @@
 	var iTel = 0; var jTel = 0;
 	while(iTel<totTel){
 				
-		iTel++;
-
 		var telName_name = "name_"; telName_name+=iTel;
 		telName = jsVars[telName_name]; 
 		var lon_name = "lon_"; lon_name+=iTel;
 		lon = parseFloat(jsVars[lon_name]); 
-		if(isNaN(lon)){continue;}
+		if(isNaN(lon)){iTel++; continue;}
 		var lat_name = "lat_"; lat_name+=iTel;
 		lat = parseFloat(jsVars[lat_name]);
-		if(isNaN(lat)){continue;}
+		if(isNaN(lat)){iTel++; continue;}
+		iTel++;
 		
-		//alert(lon);
 		if((lon<5. || lon>20.) || (lat<30. || lat>50.))
 		{ 
-			//alert(lon);
             continue;			
 		}
 		
